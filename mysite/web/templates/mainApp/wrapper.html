@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Заголовок страницы</title>
+
+</head>
+<body>
+  <form action="/web/file-input/" method="post"    >
+    {% csrd_token %}
+
+    Наименование продукта<input type="text" name = "name"> <br>
+    Брэнд<input type="text" name = "brand"> <br>
+    Категория<input type="text" name = "category"> <br>
+    Количество товара на складе<input type="text" name = "quanity"> <br>
+    Цена за единицу товара<input type="text" name = "cost"> <br>
+  </form>
+
+  <form action="/web/order-input/" method="post">
+    {% csrd_token %}
+    product<input type="text" name = "product"> <br>
+
+    order<input type="text" name = "id"> <br>
+    Дата оформления заказа<input type="text" name = "date"> <br>
+    Количество приобретаемого заказа<input type="text" name = "cnt"> <br>
+  </form>
+
+</body>
+</html>

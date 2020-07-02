@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Заголовок страницы</title>
+
+</head>
+<body>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Brand -  Category</h1>
+        {% for zapr1 in zapr1 %}
+          <div>{{zapr1.brand}}  -  {{zapr1.category}}</div>
+        {% endfor %}
+        {% for zapr_s in zapr_s %}
+
+          <div>{{zapr_s.id}} - {{zapr_s.name_s}}  -  {{zapr_o.cnt}}</div>
+
+        {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

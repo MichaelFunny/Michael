@@ -1,0 +1,140 @@
+{% extends "mainApp/wrapper.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="section section3 laptops-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-center">
+                    Телефоны
+                </h1>
+          </div>
+        </div>
+     </div>
+  </div>
+  <div class="section-top">
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          {% for product in products %}
+          <div class="col-lg-3">
+            <div class="product-item">
+                <h4>{{ product.name }}</h4>
+                <p>
+
+                <div>
+                  {{ product.cost }} Руб.
+                </div>
+                </p>
+                <p>
+                <div>
+                </div>
+                <form id="form_buying_product" class="form-inline" action="{% url 'basket_adding'   %}" method="post">{% csrf_token %}
+                <div class="form-group">
+                     <input type="number" class="form-control" name="number" id="number" value="1">
+
+                </div>
+              <p>
+                </p>
+                <div class="form-group">
+                        <button type="submit" id="submit_btn" class="btn btn-success btn-buy"
+                            data-product_id = "{{ product.id }}"
+                            data-name ="{{ product.name }}"
+                            data-price ="{{ product.price }}"
+                        >
+
+                      Добавить в корзину
+                      </button>
+                </div>
+                </form>
+
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+      <div class="section section3 airphones-container">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <h1 class="text-center">
+                          Наушники
+                      </h1>
+                  </div>
+                </div>
+             </div>
+          </div>
+          <div class="section-top">
+            <div class="section">
+              <div class="container">
+                <div class="row">
+                  {% for product in products1 %}
+
+                  <div class="col-lg-3">
+                    <div class="product-item">
+                        <h4>{{ product.name }}</h4>
+
+                        <div>
+                          {{ product.cost }} Руб.
+                        </div>
+                        <div>
+                          <form id="form_buying_product" class="form-inline">
+                            <div class="form-group">
+                            <input type="number" class="form-control" value="1">
+                            </div>
+                          <div class="add-to-cart-btn">
+                            <button class="btn btn-success">
+                              Добавить в корзину
+                            </button>
+                          </div>
+                          </form>
+                        </div>
+                    </div>
+                  </div>
+
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          <div class="section section3 holod-container">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <h1 class="text-center">
+                              Холодильники
+                          </h1>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-top">
+              <div class="section">
+                <div class="container">
+                  <div class="row">
+                    {% for product in products2 %}
+                    <div class="col-lg-3">
+                      <div class="product-item">
+                          <h4>{{ product.name }}</h4>
+                          <div>
+                            {{ product.cost }} Руб.
+                          </div>
+                          <form id="form_buying_product" class="form-inline">
+                            <div class="form-group">
+                            <input type="number" class="form-control" value="1">
+                            </div>
+                            <div class="add-to-cart-btn">
+                              <button class="btn btn-success">
+                                Добавить в корзину
+                              </button>
+                            </div>
+                            </form>
+                      </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+{% endblock %}
